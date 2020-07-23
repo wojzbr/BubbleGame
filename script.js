@@ -36,10 +36,10 @@ genRndmClr = () => { /*Random Color*/
 
 genRndmPstn = (leftOrTop) => { /*Random position*/
     if (leftOrTop=="left"){
-        return Math.floor(Math.random() * 1100);
+        return Math.floor(Math.random() * screenWidth);
     }
-    else {
-        return Math.floor(Math.random() * 400);
+    if (leftOrTop=="top") {
+        return Math.floor(Math.random() * screenHeight);
     }
 }
 
