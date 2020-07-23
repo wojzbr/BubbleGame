@@ -39,7 +39,7 @@ genRndmPstn = (leftOrTop) => { /*Random position*/
         return Math.floor(Math.random() * screenWidth);
     }
     if (leftOrTop=="top") {
-        return Math.floor(Math.random() * screenHeight);
+        return Math.floor(Math.random() * screenHeight - 300);
     }
 }
 
