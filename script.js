@@ -3,8 +3,8 @@ let count = 0;
 let counter = document.getElementById('counter');
 let timer = document.getElementById('timer');
 let set = false;
-let screenWidth = screen.width;
-let screenHeight = screen.height;
+let screenWidth = screen.width - 400;
+let screenHeight = screen.height - 400;
 btn.innerHTML=`Catch Me!`;
 
 handleClick = () => { /*handles click event*/
@@ -36,10 +36,10 @@ genRndmClr = () => { /*Random Color*/
 
 genRndmPstn = (leftOrTop) => { /*Random position*/
     if (leftOrTop=="left"){
-        return Math.floor(Math.random() * (screenWidth-400));
+        return Math.floor(Math.random() * screenWidth);
     }
     if (leftOrTop=="top") {
-        return Math.floor(Math.random() * (screenHeight-400));
+        return Math.floor(Math.random() * screenHeight);
     }
 }
 
