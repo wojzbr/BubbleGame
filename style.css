@@ -1,0 +1,26 @@
+body {
+  display: flex;
+}
+#randomButton {
+  display: flex;
+  position: relative;
+  left: 45%;
+  top: 200px;
+  width: 100px;
+  height: 100px; 
+  border-radius: 50%;
+  background-color: turquoise;
+  color: white;
+  align-items:center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+}
+
+#timer {
+  position: absolute;
+  top: 30px;
+  right: 70px;
+  font-size: 24px;
+  font-weight: 700;
+}
