@@ -43,6 +43,8 @@ genRndmPstn = (leftOrTop) => { /*Random position*/
     }
 }
 
+btn.addEventListener('click', handleClick);
+
 setTimer = () => { /*Timer for right upper corner*/
     let seconds = 5;
     var interval;
@@ -61,5 +63,3 @@ setTimer = () => { /*Timer for right upper corner*/
         }
     },1000)
 }
-
-btn.addEventListener('click', handleClick);
