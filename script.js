@@ -3,7 +3,8 @@ let count = 0;
 let counter = document.getElementById('counter');
 let timer = document.getElementById('timer');
 let set = false;
-let screenCenter = screen.width/2;
+let screenWidth = screen.width;
+let screenHeight = screen.height;
 btn.innerHTML=`Catch Me!`;
 
 handleClick = () => { /*handles click event*/
@@ -52,8 +53,8 @@ setTimer = () => { /*Timer for right upper corner*/
             clearInterval(interval);
             btn.style.height="200px";
             btn.style.width="200px";
-            btn.style.left=`${screenCenter-100}px`;
-            btn.style.top="200px";
+            btn.style.left=`${screenWidth/2-100}px`;
+            btn.style.top=`${screenHeight/2-100}px`;
             btn.style.fontSize="30px";
             btn.innerHTML=`Time's up!<br>Your score: ${count}`;
             btn.removeEventListener('click', handleClick);
