@@ -56,7 +56,7 @@ setTimer = () => { /*Timer for right upper corner*/
             btn.style.top="200px";
             btn.style.fontSize="30px";
             btn.innerHTML=`Time's up!<br>Your score: ${count}`;
-            /*btn.removeEventListener('click', handleClick);*/
+            btn.removeEventListener('click', handleClick);
         }
     },1000)
 }
