@@ -1,12 +1,17 @@
 let btn = document.getElementById('randomButton');
 let rst = document.getElementById('reset');
-let count = 0;
 let counter = document.getElementById('counter');
 let timer = document.getElementById('timer');
+let tpScr = document.getElementById('top-score');
+
+let count = 0;
+let topScore = 0;
 let set = false;
 let screenWidth = screen.width - 400;
 let screenHeight = screen.height - 400;
+
 btn.innerHTML=`Catch Me!`;
+tpScr.innerHTML = `TOP SCORE: ${topScore}`;
 
 handleClick = () => { /*handles click event*/
     genRndmBtn();
@@ -16,6 +21,13 @@ handleClick = () => { /*handles click event*/
         set = true;
     }
 }
+
+getTopScore = (score) => {
+    if (score>topScore) {
+        tpScr.innerHTML = `TOP SCORE: ${score}`;
+        topScore = score;
+    }
+};
 
 genRndmBtn = () => { /*Generates new button with random color, position and size*/
     btn.style.backgroundColor=`rgb(${genRndmClr()},${genRndmClr()},${genRndmClr()})`;
@@ -55,7 +67,7 @@ rst.addEventListener('click', function(){
     btn.style.fontSize=`18px`;
     btn.style.left = `45%`;
     btn.style.top = `200px`;
-    btn.style.backgroundColor = "turquoise";
+    btn.style.backgroundColor = "rgb(64,224,208)";
     timer.innerText = "TIME: 5";
     btn.addEventListener('click', handleClick);
 })
@@ -68,6 +80,7 @@ setTimer = () => { /*Timer for right upper corner*/
         timer.innerText=seconds;
         if (!seconds){
             clearInterval(interval);
+            getTopScore(count);
             btn.style.height="200px";
             btn.style.width="200px";
             btn.style.left=`${screenWidth/2-100}px`;
