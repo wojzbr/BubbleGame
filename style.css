@@ -24,3 +24,11 @@ body {
   font-size: 24px;
   font-weight: 700;
 }
+
+#reset {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  font-size: 24px;
+  font-weight: 700;
+}

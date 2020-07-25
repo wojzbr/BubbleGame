@@ -1,4 +1,5 @@
 let btn = document.getElementById('randomButton');
+let rst = document.getElementById('reset');
 let count = 0;
 let counter = document.getElementById('counter');
 let timer = document.getElementById('timer');
@@ -44,6 +45,19 @@ genRndmPstn = (leftOrTop) => { /*Random position*/
 }
 
 btn.addEventListener('click', handleClick);
+
+rst.addEventListener('click', function(){
+    set=false;
+    count=0;
+    btn.innerHTML=`Catch Me!`;
+    btn.style.width = `100px`;
+    btn.style.height = `100px`;
+    btn.style.fontSize=`18px`;
+    btn.style.left = `45%`;
+    btn.style.top = `200px`;
+    btn.style.backgroundColor = "turquoise";
+    btn.addEventListener('click', handleClick);
+})
 
 setTimer = () => { /*Timer for right upper corner*/
     let seconds = 5;
