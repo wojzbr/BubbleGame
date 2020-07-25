@@ -7,8 +7,8 @@ let tpScr = document.getElementById('top-score');
 let count = 0;
 let topScore = 0;
 let set = false;
-let screenWidth = window.screen.availWidth;
-let screenHeight = window.screen.availHeight;
+let screenWidth = screen.width;
+let screenHeight = screen.height;
 
 btn.innerHTML=`Catch Me!`;
 tpScr.innerHTML = `TOP SCORE: ${topScore}`;
@@ -32,8 +32,8 @@ getTopScore = (score) => {
 genRndmBtn = () => { /*Generates new button with random color, position and size*/
     btn.style.backgroundColor=`rgb(${genRndmClr()},${genRndmClr()},${genRndmClr()})`;
     let circleSize = genRndmSize();
-    btn.style.left = `${genRndmPstn("left", circleSize)}px`;
-    btn.style.top = `${genRndmPstn("top", circleSize)}px`;
+    btn.style.left = `${genRndmPstn("left")}px`;
+    btn.style.top = `${genRndmPstn("top")}px`;
     
     btn.style.width = `${circleSize}px`;
     btn.style.height = `${circleSize}px`;
@@ -48,12 +48,12 @@ genRndmClr = () => { /*Random Color*/
     return Math.floor(Math.random() * 255);
 }
 
-genRndmPstn = (leftOrTop, bubbleDiameter) => { /*Random position*/
+genRndmPstn = (leftOrTop) => { /*Random position*/
     if (leftOrTop=="left"){
-        return Math.floor(Math.random() * (screenWidth - bubbleDiameter));
+        return Math.floor(Math.random() * (screen.width*0.7));
     }
     if (leftOrTop=="top") {
-        return Math.floor(Math.random() * (screenHeight - bubbleDiameter - 150));
+        return Math.floor(Math.random() * (screen.height*0.7));
     }
 }
 
