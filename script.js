@@ -7,8 +7,8 @@ let tpScr = document.getElementById('top-score');
 let count = 0;
 let topScore = 0;
 let set = false;
-let screenWidth = screen.width - 400;
-let screenHeight = screen.height - 400;
+let screenWidth = window.screen.availWidth - 400;
+let screenHeight = window.screen.availHeight - 400;
 
 btn.innerHTML=`Catch Me!`;
 tpScr.innerHTML = `TOP SCORE: ${topScore}`;
