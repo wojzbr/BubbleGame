@@ -24,7 +24,7 @@ handleClick = () => { /*handles click event*/
 
 getTopScore = (score) => {
     if (score>topScore) {
-        tpScr.innerHTML = `TOP SCORE: ${score}`;
+        tpScr.innerHTML = `TOP SCORE: ${score} height ${screenHeight} width ${screenWidth}`;
         topScore = score;
     }
 };
