@@ -56,6 +56,7 @@ rst.addEventListener('click', function(){
     btn.style.left = `45%`;
     btn.style.top = `200px`;
     btn.style.backgroundColor = "turquoise";
+    timer.innerText = "TIME: 5";
     btn.addEventListener('click', handleClick);
 })
 
