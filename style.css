@@ -14,15 +14,15 @@ body {
   position: absolute;
   left: 45%;
   top: 200px;
-  width: 100px;
-  height: 100px; 
+  width: 150px;
+  height: 150px; 
   border-radius: 50%;
   background-color: turquoise;
   color: white;
   align-items:center;
   justify-content: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 27px;
 }
 
 #timer {
@@ -34,6 +34,7 @@ body {
 }
 
 #reset {
+  cursor: pointer;
   position: absolute;
   top: 30px;
   left: 70px;

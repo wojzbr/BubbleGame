@@ -12,13 +12,13 @@ let screenHeight = window.innerHeight;
 
 btn.innerHTML=`Catch Me!`;
 tpScr.innerHTML = `TOP SCORE: ${topScore}`;
+rst.style.visibility = 'hidden';
 
 handleClick = () => { /*handles click event*/
     genRndmBtn();
     count++;
     if (!set){
         rst.removeEventListener('click', reset);
-        rst.style.cursor = 'default';
         setTimer();
         set = true;
     }
@@ -35,16 +35,16 @@ reset = () => {
     set=false;
     count=0;
     btn.innerHTML=`Catch Me!`;
-    btn.style.width = `100px`;
-    btn.style.height = `100px`;
-    btn.style.fontSize=`18px`;
+    btn.style.width = `150px`;
+    btn.style.height = `150px`;
+    btn.style.fontSize=`27px`;
     btn.style.left = `45%`;
     btn.style.top = `200px`;
     btn.style.backgroundColor = "rgb(64,224,208)";
     timer.innerText = "TIME: 5";
     btn.addEventListener('click', handleClick);
-    rst.style.cursor = 'default';
-    btn.style.cursor = 'pointer'; //
+    btn.style.cursor = 'pointer';
+    rst.style.visibility = 'hidden';
 }
 
 genRndmBtn = () => { /*Generates new button with random color, position and size*/
@@ -108,7 +108,7 @@ setTimer = () => { /*Timer for right upper corner*/
             btn.removeEventListener('click', handleClick);
             rst.addEventListener('click', reset);
             btn.style.cursor = 'default';
-            rst.style.cursor = 'pointer';
+            rst.style.visibility = 'visible';
         }
     },1000)
 }
