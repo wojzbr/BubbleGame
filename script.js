@@ -7,8 +7,8 @@ let tpScr = document.getElementById('top-score');
 let count = 0;
 let topScore = 0;
 let set = false;
-let screenWidth = screen.width;
-let screenHeight = screen.height;
+let screenWidth = window.screen.availWidth;
+let screenHeight = window.screen.availHeight;
 
 btn.innerHTML=`Catch Me!`;
 tpScr.innerHTML = `TOP SCORE: ${topScore}`;
@@ -50,10 +50,10 @@ genRndmClr = () => { /*Random Color*/
 
 genRndmPstn = (leftOrTop) => { /*Random position*/
     if (leftOrTop=="left"){
-        return Math.floor(Math.random() * (screen.width*0.7));
+        return Math.floor(Math.random() * (screenWidth*0.7));
     }
     if (leftOrTop=="top") {
-        return Math.floor(Math.random() * (screen.height*0.7));
+        return Math.floor(Math.random() * (screenHeight*0.7));
     }
 }
 
