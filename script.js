@@ -92,3 +92,5 @@ setTimer = () => { /*Timer for right upper corner*/
         }
     },1000)
 }
+
+document.getElementById('height-test').style.height=`${screenHeight}`
