@@ -45,9 +45,3 @@ body {
   font-size: 24px;
   font-weight: 700;
 }
-
-#height-test {
-  width: 50px;
-  background-color: red;
-  position: absolute;
-}
