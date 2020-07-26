@@ -44,7 +44,7 @@ reset = () => {
     timer.innerText = "TIME: 5";
     btn.addEventListener('click', handleClick);
     rst.style.cursor = 'default';
-    btn.style.cursor = 'pointer';
+    btn.style.cursor = 'pointer'; //
 }
 
 genRndmBtn = () => { /*Generates new button with random color, position and size*/
