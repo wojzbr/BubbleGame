@@ -17,6 +17,8 @@ handleClick = () => { /*handles click event*/
     genRndmBtn();
     count++;
     if (!set){
+        rst.removeEventListener('click', reset);
+        rst.style.cursor = 'default';
         setTimer();
         set = true;
     }
@@ -28,6 +30,22 @@ getTopScore = (score) => {
         topScore = score;
     }
 };
+
+reset = () => {
+    set=false;
+    count=0;
+    btn.innerHTML=`Catch Me!`;
+    btn.style.width = `100px`;
+    btn.style.height = `100px`;
+    btn.style.fontSize=`18px`;
+    btn.style.left = `45%`;
+    btn.style.top = `200px`;
+    btn.style.backgroundColor = "rgb(64,224,208)";
+    timer.innerText = "TIME: 5";
+    btn.addEventListener('click', handleClick);
+    rst.style.cursor = 'default';
+    btn.style.cursor = 'pointer';
+}
 
 genRndmBtn = () => { /*Generates new button with random color, position and size*/
     btn.style.backgroundColor=`rgb(${genRndmClr()},${genRndmClr()},${genRndmClr()})`;
@@ -68,19 +86,9 @@ genRndmPstn = (leftOrTop, bubbleDiameter) => { //Random position
 
 btn.addEventListener('click', handleClick);
 
-rst.addEventListener('click', function(){
-    set=false;
-    count=0;
-    btn.innerHTML=`Catch Me!`;
-    btn.style.width = `100px`;
-    btn.style.height = `100px`;
-    btn.style.fontSize=`18px`;
-    btn.style.left = `45%`;
-    btn.style.top = `200px`;
-    btn.style.backgroundColor = "rgb(64,224,208)";
-    timer.innerText = "TIME: 5";
-    btn.addEventListener('click', handleClick);
-})
+rst.addEventListener('click', reset);
+
+
 
 setTimer = () => { /*Timer for right upper corner*/
     let seconds = 5;
@@ -98,6 +106,9 @@ setTimer = () => { /*Timer for right upper corner*/
             btn.style.fontSize="30px";
             btn.innerHTML=`Time's up!<br>Your score: ${count}`;
             btn.removeEventListener('click', handleClick);
+            rst.addEventListener('click', reset);
+            btn.style.cursor = 'default';
+            rst.style.cursor = 'pointer';
         }
     },1000)
 }

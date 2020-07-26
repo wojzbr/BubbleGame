@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  cursor: default;
 }
 body {
   display: flex;
@@ -32,7 +33,6 @@ body {
 }
 
 #reset {
-  cursor: pointer;
   position: absolute;
   top: 30px;
   left: 70px;
