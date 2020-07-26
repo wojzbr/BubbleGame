@@ -32,8 +32,8 @@ getTopScore = (score) => {
 genRndmBtn = () => { /*Generates new button with random color, position and size*/
     btn.style.backgroundColor=`rgb(${genRndmClr()},${genRndmClr()},${genRndmClr()})`;
     let circleSize = genRndmSize();
-    btn.style.left = `${genRndmPstn("left")}px`;
-    btn.style.top = `${genRndmPstn("top")}px`;
+    btn.style.left = `${genRndmPstn("left", circleSize)}px`;
+    btn.style.top = `${genRndmPstn("top", circleSize)}px`;
     
     btn.style.width = `${circleSize}px`;
     btn.style.height = `${circleSize}px`;
@@ -44,16 +44,25 @@ genRndmSize = () => {
     return Math.floor(Math.random() * 280)+20;
 }
 
-genRndmClr = () => { /*Random Color*/
+genRndmClr = () => { //Random Color
     return Math.floor(Math.random() * 255);
 }
 
-genRndmPstn = (leftOrTop) => { /*Random position*/
-    if (leftOrTop=="left"){
-        return Math.floor(Math.random() * (screenWidth*0.7));
+genRndmPstn = (leftOrTop, bubbleDiameter) => { //Random position
+    let randomPosition;
+    if (leftOrTop=="left"){ //Check if the dimension is from left or from top
+        randomPosition = Math.floor(Math.random() * screenWidth); //assign random valiue to randomPosition
+        if (randomPosition + bubbleDiameter > screenWidth) {    //Check if a bubble rendered at randomPosition exceeds the screen dimension
+            return screenWidth-bubbleDiameter; //if it exeeds, then just render it as far as possible without exeeding
+        }
+        else return randomPosition; //if it doesn't exeed, return it at randomPosition
     }
     if (leftOrTop=="top") {
-        return Math.floor(Math.random() * (screenHeight*0.7));
+        randomPosition = Math.floor(Math.random() * screenHeight);
+        if (randomPosition + bubbleDiameter > screenHeight) {
+            return screenHeight-bubbleDiameter;
+        }
+        else return randomPosition;
     }
 }
 
