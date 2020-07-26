@@ -57,7 +57,7 @@ genRndmPstn = (leftOrTop, bubbleDiameter) => { //Random position
         }
         else return randomPosition; //if it doesn't exeed, return it at randomPosition
     }
-    if (leftOrTop=="top") {
+    if (leftOrTop=="top") { //same as above
         randomPosition = Math.floor(Math.random() * screenHeight);
         if (randomPosition + bubbleDiameter > screenHeight) {
             return screenHeight-bubbleDiameter;
